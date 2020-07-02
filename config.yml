@@ -1,0 +1,10 @@
+---
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: voteappconfig
+      labels:
+        app: vote
+    data:
+      option_A: GoingOffice
+      option_B: NotGoingOffice

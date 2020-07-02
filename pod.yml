@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+ name: simplepod
+ labels: 
+  app: website
+  version: v2
+spec:
+  containers:
+    - image: nginx
+      name: nginx
+      ports:
+      - name: webport
+        containerPort: 80
+        protocol: TCP
+    - name: config-server
+      image: pragra/discovery-server
+      ports:
+      - name: server-port
+        containerPort: 8761
+        protocol: TCP

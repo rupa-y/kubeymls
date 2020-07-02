@@ -1,0 +1,18 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: notifjob
+spec:
+  concurrencyPolicy: Allow
+  failedJobsHistoryLimit: 5
+  schedule: "* * * * *"
+  jobTemplate:
+    metadata:
+      name: notifjob
+    spec:
+      template:
+        spec:
+          containers:
+            - image: pragra/job
+              name: jobpod
+          restartPolicy: Never

@@ -1,0 +1,14 @@
+---
+    apiVersion: batch/v1
+    kind: Job
+    metadata:
+      name: appjob
+    spec:
+      template:
+        metadata:
+          name:  appjob
+        spec:
+          containers: 
+          - image: pragra/job
+            name: jobpod
+          restartPolicy: Never
